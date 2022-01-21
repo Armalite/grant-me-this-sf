@@ -8,24 +8,28 @@ variable "grants" {
         object({ # represents a privilege
             privilege  = string
             roles      = list(string) # represents a list of roles to grant the privilege to
+            shares     = optional(list(string))
         })
       )
       schema_privileges = map(
         object({
             privilege  = string
             roles      = list(string)
+            shares     = optional(list(string))
         })
       )
       table_privileges  = map(
         object({
             privilege  = string
             roles      = list(string)
+            shares     = optional(list(string))
         })
       )
       view_privileges   = map(
         object({
             privilege  = string
             roles      = list(string)
+            shares     = optional(list(string))
         })
       )
     })
