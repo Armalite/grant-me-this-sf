@@ -6,30 +6,35 @@ variable "grants" {
       name              = string
       db_privileges     = map( # represents a type of grant and a group of privileges under it
         object({ # represents a privilege
-            privilege  = string
-            roles      = list(string) # represents a list of roles to grant the privilege to
-            shares     = optional(list(string))
+            privilege       = string
+            roles           = list(string) # represents a list of roles to grant the privilege to
+            shares          = optional(list(string))
         })
       )
       schema_privileges = map(
         object({
-            privilege  = string
-            roles      = list(string)
-            shares     = optional(list(string))
+            privilege       = string
+            roles           = list(string)
+            shares          = optional(list(string))
+            schema_name     = optional(string)
         })
       )
       table_privileges  = map(
         object({
-            privilege  = string
-            roles      = list(string)
-            shares     = optional(list(string))
+            privilege       = string
+            roles           = list(string)
+            shares          = optional(list(string))
+            schema_name     = optional(string)
+            table_name      = optional(string)
         })
       )
       view_privileges   = map(
         object({
-            privilege  = string
-            roles      = list(string)
-            shares     = optional(list(string))
+            privilege       = string
+            roles           = list(string)
+            shares          = optional(list(string))
+            schema_name     = optional(string)
+            view_name       = optional(string)
         })
       )
     })

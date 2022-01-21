@@ -10,7 +10,7 @@ module "grant-for-beautiful-db" {
       name = "beautiful_db"
       db_privileges = { # the sf db grant privileges
         usage = {
-          privilege = "USAGE"                                  # a privilege
+          privilege = "USAGE"                                          # a privilege
           roles     = ["SWEET_SNOWFLAKE_ROLE", "SALTY_SNOWFLAKE_ROLE"] # a list of roles the privilege will be granted to
           shares    = []
         }
@@ -63,10 +63,10 @@ module "grant-for-dapper-db" {
       name = "dapper_db"
       db_privileges = { # the sf db grant privileges
         usage = {
-          privilege = "USAGE"                                  # a privilege
+          privilege = "USAGE"                                                                 # a privilege
           roles     = ["SWEET_SNOWFLAKE_ROLE", "SALTY_SNOWFLAKE_ROLE", "SOUR_SNOWFLAKE_ROLE"] # a list of roles the privilege will be granted to
         }
-        create_schema= {
+        create_schema = {
           privilege = "CREATE SCHEMA"
           roles     = ["SOME_ADMIN_ROLE"]
         }
