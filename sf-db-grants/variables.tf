@@ -1,6 +1,6 @@
 # --- modules/sf-db-grants/variables.tf ---
 
-variable "grants" {
+variable "db-grants" {
   type = map( # represents a group of databases
     object({ # represents a database
       name              = string
@@ -41,4 +41,9 @@ variable "grants" {
   )
   description = "A map of databases that contains the database name as well as a list of object privileges to grant to the SA"
   default     = null
+}
+
+variable "wh-grants" { 
+  type = object()
+  default = null
 }
